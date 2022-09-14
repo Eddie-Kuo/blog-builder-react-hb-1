@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Editor.css';
 
-export default function Editor({ title, setTitle, font, setFont, setAlignment, subtitle, setSubtitle }) {
+export default function Editor({ title, setTitle, font, setFont, setAlignment, subtitle, setSubtitle, text, setText }) {
   return (
     <div className="editor">
       <div className="form-control">
@@ -48,7 +48,7 @@ export default function Editor({ title, setTitle, font, setFont, setAlignment, s
         </div>
       </div>
       <div className="form-control">
-        <textarea style={{ height: '250px' }} />
+        <textarea style={{ height: '250px' }} value={text} onChange={(e) => setText(e.target.value) } />
         <label>Text</label>
       </div>
     </div>
